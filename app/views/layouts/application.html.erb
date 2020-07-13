@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <%=csrf_meta_tags %> 
+    <%= csp_meta_tag %>
+    <%=stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track':'reload'%> 
+    <%=javascript_include_tag 'application', 'data-turbolinks-track':'reload' %>
+  </head>
+
+  <body>
+    <section>
+      <head>
+        <nav class="nav">
+          <div class="logo">
+            <a href="<%=users_path%>">
+              <%=image_tag 'iconelocal.png',class:'image',alt:'test'%>
+            </a>
+          </div>
+          <div class="btn">
+            <span class="btn-burger"> </span>
+          </div>
+          <ul class="nav-contents">
+            <a href="#" class="nav-item">
+              <li>ACCUEIL</li>
+            </a>
+            <a href="#" class="nav-item">
+              <li>MÉTHODOLOGIE</li>
+            </a>
+            <a href="#" class="nav-item">
+              <li>PORTFOLIO</li>
+            </a>
+            <a href="#" class="nav-item">
+              <li>CONTACT</li>
+            </a>
+          </ul>
+          <div>
+            <% if user_signed_in? %>
+            <div class="dropup">
+              <div id="btn-log">mon profil</div>
+              <div class="content">
+                <a href="<%= user_path(current_user.id) %>">
+                  <div class="item">Mon profil</div>
+                </a>
+                <a href="<%= destroy_user_session_path %>" data-method="delete">
+                  <div class="item">Se déconnecter</div>
+                </a>
+              </div>
+            </div>
+            <%else%>
+            <div class="login">
+              <%=link_to 'se connecter', new_user_session_path %>
+            </div>
+            <%end%>
+          </div>
+        </nav>
+      </head>
+    </section>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+
+</html>

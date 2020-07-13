@@ -1,0 +1,8 @@
+<h1>Users#edit</h1>
+<%=form_tag url_for(action:'update'),method:'put' do%>
+    <input type="text" name="name" placeholder="Name" value=<%= current_user.name %> > <br>
+    <input type="text" name="email" placeholder="Email" value=<%= current_user.email %> > <br>
+    <input type="text" name="adress" placeholder="Adress" value=<%= current_user.adress %> > <br>
+    <input type="number" name="age" placeholder="Age" value=<%= current_user.age %> > <br>
+    <input type="submit" value="valider">
+<% end %>

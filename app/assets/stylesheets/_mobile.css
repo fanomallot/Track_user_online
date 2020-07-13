@@ -1,0 +1,38 @@
+@media screen and (max-width: 730px) {
+  .nav {
+    justify-content: flex-start;
+  }
+  .nav-contents {
+    transform: translateY(-65px);
+    width: 40%;
+  }
+  .nav-item {
+    transform: translateX(200px);
+    width: 100%;
+  }
+
+  .logo {
+    width: 30%;
+    margin-left: 1em;
+  }
+}
+@media screen and (min-width: 730px) {
+  .nav {
+    justify-content: flex-start;
+  }
+  .logo {
+    width: 20%;
+  }
+  .nav-contents {
+    justify-content: center;
+    width: 60%;
+    transform: translateY(0);
+  }
+  .nav-item {
+    transform: translateX(0);
+    width: 20%;
+  }
+  .btn {
+    display: none;
+  }
+}

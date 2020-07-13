@@ -1,0 +1,31 @@
+<h1>Voici tous les utilisateurs</h1>
+<table>
+  <tr class="tb-user">
+    <th class="tb-user">Name</th>
+    <th>Age</th>
+    <th>Adress</th>
+    <th>email</th>
+    <th>Status online</th>
+    <th>Status</th>
+    <th>Status offline</th>
+  </tr>
+  <%@users.each do |user|%>
+  <tr>
+    <td><%=user.name%></td>
+    <td><%=user.age%></td>
+    <td><%=user.adress%></td>
+    <td><%=user.email%></td>
+    <td>
+      <%=time_ago_in_words user.last_seen_at unless user.last_seen_at.nil?%>
+    </td>
+    <td>
+      <% unless user.last_seen_at.nil?%>Connected <%else%> not connected<%end%>
+    </td>
+    <td>
+      <%=time_ago_in_words user.offline_timing unless user.offline_timing.nil?%>
+    </td>
+  </tr>
+  <%end%>
+</table>
+<%@online.each do |u|%> <%=u.name%> <%end%>
+<span class="btn-online"> <%=@online.count%>oneline</span>

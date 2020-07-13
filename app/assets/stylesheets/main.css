@@ -1,0 +1,146 @@
+@import "_btnburger.css";
+@import "_mobile.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nav {
+  color: lightgoldenrodyellow;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  background: rgba(0, 0, 255, 0.589);
+  height: 4em;
+  width: 100%;
+  display: flex;
+  position: fixed;
+}
+.logo {
+  text-align: center;
+}
+.logo img {
+  height: 4em;
+  width: 2em;
+  transition-delay: 0.3s;
+}
+.logo img:hover,
+.logo img:active {
+  height: 5em;
+  width: 3em;
+}
+.nav-contents {
+  display: flex;
+  align-items: center;
+}
+.nav-contents.open {
+  transition: transform 800ms ease-in-out;
+  z-index: 1;
+  right: 0;
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    rgba(128, 128, 128, 0.918),
+    rgba(0, 0, 0, 0.89)
+  );
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transform: translateY(0);
+  text-transform: uppercase;
+}
+.nav-item {
+  list-style: none;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+.nav-item:hover,
+.nav-item:active {
+  color: #6969ff;
+  font-weight: bold;
+  /* transition: all 500ms ease-in-out; */
+  font-size: large;
+  padding: 1em 0;
+  background-color: rgba(252, 252, 252, 0.904);
+}
+
+.nav-item.open {
+  transform: translateX(0);
+  margin-bottom: 2em;
+  transition: all 500ms ease-in-out;
+}
+.nav-item:first-child {
+  transition: transform 500ms;
+}
+.nav-item:nth-child(2) {
+  transition: transform 1s;
+}
+.nav-item:last-child {
+  transition: transform 1.5s;
+}
+.login {
+  background-color: black;
+  text-align: center;
+  height: 50px;
+  padding: 1em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* dropdown */
+
+.content {
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  top: 4rem;
+  right: 8%;
+  display: none;
+}
+.content:hover {
+  display: block;
+}
+a{
+  text-decoration: none;
+}
+.item {
+  padding: 1em .5em;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+.item:hover {
+  background-color: rgba(240, 255, 240, 0.938);
+  color: rgb(255, 72, 0);
+}
+.dropup{
+  padding: .4em;
+}
+#btn-log{
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: aqua;
+  padding: 1em;
+}
+.up {
+  display: block;
+}
+.container {
+  padding-top: 5em;
+}
+/* table index user  */
+table{
+  border-collapse: collapse;
+}
+th , td{
+  text-align: center;
+  padding: .5em 1em;
+  border: 1px solid black;
+}
+/* online btn  */
+.btn-online{
+  background: rgb(2, 206, 2);
+}
