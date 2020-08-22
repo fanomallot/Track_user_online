@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     end
     def check_offline
         User.all.each do |user|
-          if user.last_seen_at != nil && user.last_seen_at < 6.minutes.ago
+          if user.last_seen_at != nil && user.last_seen_at < 10.minutes.ago
             user.update(last_seen_at: nil, offline_timing: Time.current)
           end
         end
